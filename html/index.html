@@ -4,11 +4,21 @@
 </head>
 <body>
 <button id="demo1" type="button" onclick="checkClick()">Click</button>
-<button id="startEngine" type="button" onclick="document.getElementById('carDiv').innerHTML=car.engineStart()">Start the Car!</button>
+<button id="startEngine" type="button" onclick="document.getElementById('carDiv').innerHTML=car.engineStart()">Start the
+    Car!
+</button>
 <p id="date"></p>
+
 <p id="carDiv"></p>
+
 <p id="demo"></p>
+
 <p id="demo2"></p>
+
+<p>Please input a number between 5 and 10.</p>
+<input id="inputNum" type="text">
+
+<button type="button" onclick="checkNum()">Submit</button>
 </body>
 <script>
     var clickCt = 0;
@@ -16,7 +26,7 @@
     {
 
         var content = document.getElementById('demo1');
-        if(content.innerHTML == "Click" || content.innerHTML == ":(")
+        if (content.innerHTML == "Click" || content.innerHTML == ":(")
         {
             content.innerHTML = ":)";
         }
@@ -26,11 +36,11 @@
         }
         console.log(content.innerHTML);
         clickCt++;
-        if(clickCt == 10)
+        if (clickCt == 10)
         {
             document.getElementById('demo').innerHTML = "Well there is nothing for you idiot!";
         }
-        else if(clickCt % 10 == 0)
+        else if (clickCt % 10 == 0)
         {
             document.getElementById('demo').style.fontSize = clickCt + "px";
         }
@@ -43,7 +53,7 @@
     {
         band: "Volve",
         color: "Black",
-        engineStart: function()
+        engineStart: function ()
         {
             return "Engine Started";
         }
@@ -53,7 +63,7 @@
 
 <script>
     var str = "Hello World!";
-    console.log(Number(Date()));
+    console.log(Number(new Date()));
 </script>
 <script>
     var d = Date();
@@ -64,5 +74,12 @@
     cars.pop();
     cars.push("Audi");
     document.getElementById("demo2").innerHTML = cars.toString();
+    console.log(d1.constructor);
+</script>
+<script>
+    function checkNum()
+    {
+        console.log(document.getElementById("inputNum").value)
+    }
 </script>
 </html>
