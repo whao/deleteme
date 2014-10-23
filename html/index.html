@@ -1,0 +1,68 @@
+<html>
+<head>
+    <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<button id="demo1" type="button" onclick="checkClick()">Click</button>
+<button id="startEngine" type="button" onclick="document.getElementById('carDiv').innerHTML=car.engineStart()">Start the Car!</button>
+<p id="date"></p>
+<p id="carDiv"></p>
+<p id="demo"></p>
+<p id="demo2"></p>
+</body>
+<script>
+    var clickCt = 0;
+    function checkClick()
+    {
+
+        var content = document.getElementById('demo1');
+        if(content.innerHTML == "Click" || content.innerHTML == ":(")
+        {
+            content.innerHTML = ":)";
+        }
+        else
+        {
+            content.innerHTML = ":(";
+        }
+        console.log(content.innerHTML);
+        clickCt++;
+        if(clickCt == 10)
+        {
+            document.getElementById('demo').innerHTML = "Well there is nothing for you idiot!";
+        }
+        else if(clickCt % 10 == 0)
+        {
+            document.getElementById('demo').style.fontSize = clickCt + "px";
+        }
+    }
+
+</script>
+
+<script>
+    var car =
+    {
+        band: "Volve",
+        color: "Black",
+        engineStart: function()
+        {
+            return "Engine Started";
+        }
+    }
+
+</script>
+
+<script>
+    var str = "Hello World!";
+    console.log(Number(Date()));
+</script>
+<script>
+    var d = Date();
+    var d1 = new Date();
+    console.log(typeof d);
+    console.log(typeof d1);
+    var cars = ["Saab", "Volvo", "BMW"];
+    cars.pop();
+    cars.push("Audi");
+    document.getElementById("demo2").innerHTML = cars.toString();
+</script>
+</html>
